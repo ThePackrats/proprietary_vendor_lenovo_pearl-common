@@ -3744,6 +3744,44 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "lights.sm6150",
+    owner: "lenovo",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/hw/lights.sm6150.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/hw/lights.sm6150.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "vendor.qti.gnss@4.0-impl",
     owner: "lenovo",
     strip: {
@@ -13620,6 +13658,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib/mediadrm/libwvdrmengine.so",
             ],
             shared_libs: [
+                "libcrypto_shim",
                 "libbase",
                 "libcrypto",
                 "liblog",
@@ -13637,6 +13676,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/mediadrm/libwvdrmengine.so",
             ],
             shared_libs: [
+                "libcrypto_shim",
                 "libbase",
                 "libcrypto",
                 "liblog",
@@ -17450,6 +17490,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libwvhidl.so",
             ],
             shared_libs: [
+                "libcrypto_shim",
                 "android.hardware.drm@1.0",
                 "android.hardware.drm@1.1",
                 "android.hardware.drm@1.2",
